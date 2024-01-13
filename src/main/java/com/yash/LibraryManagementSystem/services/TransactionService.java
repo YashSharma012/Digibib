@@ -1,17 +1,15 @@
 package com.yash.LibraryManagementSystem.services;
 
-import com.yash.LibraryManagementSystem.daos.StudentRepository;
 import com.yash.LibraryManagementSystem.daos.TransactionRepository;
 import com.yash.LibraryManagementSystem.dtos.InitiateTransactionRequest;
 import com.yash.LibraryManagementSystem.models.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.UUID;
 
-@Service
+@Service   
 public class TransactionService {
     @Autowired
     StudentService studentService;
@@ -56,6 +54,6 @@ public class TransactionService {
                 .transactionType(txnRequest.getTransactionType())
                 .build();
         transactionRepository.save(transaction);
-        return "Hello World"; 
+        return "Hello World";
     }
 }
